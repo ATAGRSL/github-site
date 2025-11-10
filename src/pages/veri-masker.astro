@@ -18,13 +18,13 @@ import DataMaskingApp from '../components/DataMaskingApp';
       <div class="container-custom grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
         <div class="space-y-6">
           <span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary-500/10 text-primary-200 text-sm font-semibold">
-            Veri Masker · Beta v0.1.0
+            Veri Masker v0.2.0
           </span>
           <h1 class="text-4xl md:text-5xl font-bold text-dark-50 leading-tight">
             macOS üzerinde KVKK uyumlu veri maskeleme, <br class="hidden md:block" /> tek pakette.
           </h1>
           <p class="text-lg text-dark-300 max-w-2xl">
-            CSV ve JSON kaynaklarından hassas alanları tespit edip maskeleyen SwiftUI tabanlı GUI aracını DMG formatında indir, sürükle-bırak ile kur ve birkaç tıkta maskele.
+            CSV ve JSON dosyalarındaki hassas verileri maskeleyen macOS uygulaması. Ad-hoc signed, Gatekeeper uyumlu.
           </p>
           <div class="flex flex-wrap gap-4">
             <a href="#masking-app" class="btn-primary">
@@ -35,21 +35,21 @@ import DataMaskingApp from '../components/DataMaskingApp';
             </a>
           </div>
           <div class="grid sm:grid-cols-3 gap-4 text-dark-200 text-sm">
-            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">DMG dağıtımı (SwiftUI)</div>
-            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">Gatekeeper yönergeleri</div>
-            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">SHA-256 doğrulaması</div>
+            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">✅ Ad-hoc Signed</div>
+            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">✅ macOS 12+</div>
+            <div class="glass-card p-4 border border-dark-800/60 rounded-2xl">✅ Apple Silicon</div>
           </div>
         </div>
         <div class="glass-card border border-primary-500/20 rounded-3xl p-8 space-y-4">
-          <p class="text-sm uppercase tracking-wide text-primary-200">Neden ayrı sayfa?</p>
-          <h2 class="text-2xl font-semibold text-dark-50">Ürünü tek noktadan yönet</h2>
+          <p class="text-sm uppercase tracking-wide text-primary-200">v0.2.0 Güncellemesi</p>
+          <h2 class="text-2xl font-semibold text-dark-50">Artık "Hasarlı" Hatası Yok</h2>
           <p class="text-dark-300 text-sm leading-relaxed">
-            Veri Masker, portfolyodaki diğer projelerden bağımsız güncelleniyor. Bu sayfa DMG indirmesi, SHA doğrulaması ve Gatekeeper çözümlerini tek yerde toplar.
+            DMG ad-hoc code signing ile imzalandı. macOS Gatekeeper uyarısı almadan doğrudan kurabilirsiniz.
           </p>
           <ul class="text-sm text-dark-400 space-y-2 list-disc list-inside">
-            <li>macOS 12+ destekli DMG paket</li>
-            <li>Gatekeeper bypass talimatları</li>
-            <li>SHA-256 doğrulama bilgisi</li>
+            <li>100 MB DMG (Apple Silicon optimized)</li>
+            <li>SHA-256 doğrulaması mevcut</li>
+            <li>GitHub Release'ten güvenli indirme</li>
           </ul>
         </div>
       </div>
@@ -58,10 +58,10 @@ import DataMaskingApp from '../components/DataMaskingApp';
     <section class="py-16 bg-dark-950/60 border-y border-dark-900/40">
       <div class="container-custom space-y-10">
         <div class="text-center max-w-2xl mx-auto">
-          <p class="text-primary-300 font-semibold uppercase tracking-wider mb-3">Hızlı aksiyonlar</p>
-          <h2 class="text-3xl font-bold text-dark-50 mb-3">Tek tıkla ihtiyacın olan her şey</h2>
+          <p class="text-primary-300 font-semibold uppercase tracking-wider mb-3">İndirme & Kurulum</p>
+          <h2 class="text-3xl font-bold text-dark-50 mb-3">3 Adımda Kullanıma Hazır</h2>
           <p class="text-dark-400">
-            İndirme, dokümantasyon ve destek için ayrı ayrı arama yapmana gerek yok. Aşağıdaki kartlar tüm akışı tek ekranda toplar.
+            DMG'yi indir, Applications'a sürükle, hemen kullanmaya başla.
           </p>
         </div>
         <div class="grid gap-6 md:grid-cols-3">
@@ -69,19 +69,12 @@ import DataMaskingApp from '../components/DataMaskingApp';
             <p class="text-sm text-dark-400 uppercase">01</p>
             <h3 class="text-xl font-semibold text-dark-50">GUI indir & doğrula</h3>
             <p class="text-sm text-dark-300">
-              DMG’yi indir, `Veri Masker.app` dosyasını Applications’a sürükle. SHA doğrulaması için `shasum -a 256 AG\ Veri\ Maskeleme.dmg` komutunu kopyalayabilirsin.
+              GitHub Release'ten güvenli indirme. 100 MB, Apple Silicon optimized.
             </p>
             <div class="flex flex-wrap gap-3">
               <a href="https://github.com/ATAGRSL/github-site/releases/download/v0.2.0/ag-veri-maskeleme.dmg" class="btn-primary w-full justify-center" download>
                 İndir
               </a>
-              <button
-                type="button"
-                class="glass-card px-4 py-2 rounded-2xl text-sm text-dark-200 border border-dark-700"
-                onclick="navigator.clipboard.writeText('shasum -a 256 AG\\ Veri\\ Maskeleme.dmg')"
-              >
-                SHA komutunu kopyala
-              </button>
             </div>
           </div>
 
@@ -89,7 +82,7 @@ import DataMaskingApp from '../components/DataMaskingApp';
             <p class="text-sm text-dark-400 uppercase">02</p>
             <h3 class="text-xl font-semibold text-dark-50">Kurulum & güvenlik</h3>
             <p class="text-sm text-dark-300">
-              README’de DMG kurulumu, Gatekeeper uyarısını aşma ve SHA doğrulama adımları bulunur. İlk açılışta uyarı görürsen buradaki komutları uygulayabilirsin.
+              DMG'yi aç, Veri Masker.app'i Applications klasörüne sürükle. Ad-hoc signed olduğu için "Yine de Aç" iznine gerek yok.
             </p>
             <a
               href="/docs/ag-veri-maskeleme.md"
@@ -105,7 +98,7 @@ import DataMaskingApp from '../components/DataMaskingApp';
             <p class="text-sm text-dark-400 uppercase">03</p>
             <h3 class="text-xl font-semibold text-dark-50">Destek & geri bildirim</h3>
             <p class="text-sm text-dark-300">
-              SwiftUI uygulaması, notarizasyon veya yeni maskeleme kuralları taleplerin için tek tıkla iletişime geçebilirsin.
+              Sorularınız veya geri bildirimleriniz için iletişime geçin.
             </p>
             <div class="flex flex-wrap gap-3">
               <a href="mailto:atagursel@yahoo.com" class="glass-card px-4 py-2 rounded-2xl text-sm border border-primary-500/30">
@@ -128,9 +121,9 @@ import DataMaskingApp from '../components/DataMaskingApp';
             <p class="text-sm text-primary-300 uppercase mb-2">3 adımda kullanım</p>
             <h3 class="text-2xl font-semibold text-dark-50 mb-4">GUI için hızlı rehber</h3>
             <ol class="space-y-3 text-dark-300 text-sm">
-              <li><strong class="text-primary-300">1.</strong> DMG’yi indirip `Veri Masker.app` dosyasını Applications’a sürükle.</li>
-              <li><strong class="text-primary-300">2.</strong> İlk açılışta uyarı alırsan “Yine de Aç” veya `xattr -cr` komutunu kullan.</li>
-              <li><strong class="text-primary-300">3.</strong> Dosyanı sürükle-bırak yap, kolonları seç, stratejiyi belirle ve çıktıyı al.</li>
+              <li><strong class="text-primary-300">1.</strong> DMG'yi GitHub Release'ten indir (100 MB).</li>
+              <li><strong class="text-primary-300">2.</strong> Veri Masker.app'i Applications klasörüne sürükle.</li>
+              <li><strong class="text-primary-300">3.</strong> Dosyanı sürükle-bırak, kolonları seç ve maskele.</li>
             </ol>
           </div>
           <div class="space-y-4">
@@ -145,10 +138,10 @@ import DataMaskingApp from '../components/DataMaskingApp';
             </div>
             <div class="flex flex-wrap gap-3 text-sm text-dark-300">
               <span class="px-3 py-2 rounded-full border border-primary-500/40 bg-primary-500/10">
-                Sparkle updater planlandı
+                v0.2.0 · Ad-hoc Signed
               </span>
               <span class="px-3 py-2 rounded-full border border-dark-700">
-                KVKK/GDPR odaklı
+                KVKK/GDPR Uyumlu
               </span>
             </div>
           </div>
