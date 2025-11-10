@@ -1,0 +1,28 @@
+---
+// Analytics Component
+// Google Analytics, Vercel Analytics veya diğer servisleri buradan ekleyebilirsiniz
+
+const ANALYTICS_ID = import.meta.env.PUBLIC_ANALYTICS_ID;
+---
+
+{ANALYTICS_ID && (
+  <script is:inline define:vars={{ ANALYTICS_ID }}>
+    // Google Analytics 4 Example
+    // Uncomment and configure when ready:
+    
+    /*
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', ANALYTICS_ID);
+    */
+  </script>
+)}
+
+<!-- 
+  To use Analytics:
+  1. Create .env file in project root
+  2. Add: PUBLIC_ANALYTICS_ID=G-XXXXXXXXXX
+  3. Uncomment the script above
+  4. Add Google Analytics script tag in Layout.astro head
+-->

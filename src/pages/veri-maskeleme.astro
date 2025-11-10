@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScrollProgress from '../components/ScrollProgress';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import DataMaskingApp from '../components/DataMaskingApp';
+---
+
+<Layout
+  title="AG Veri Maskeleme · macOS Native Veri Maskeleme Uygulaması"
+  description="AG Veri Maskeleme ile CSV/JSON dosyalarındaki hassas alanları modern SwiftUI arayüzü ile maskeleyin. KVKK/GDPR uyumlu, offline çalışır."
+>
+  <ScrollProgress client:load />
+  <Navbar client:load />
+
+  <main>
+    <section class="pt-32 pb-20 bg-gradient-to-b from-dark-950 via-dark-900 to-dark-950">
+      <div class="container-custom grid lg:grid-cols-[1.15fr_0.85fr] gap-12 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex flex-wrap items-center gap-3 text-sm font-semibold text-primary-200">
+            <span class="px-4 py-1 rounded-full bg-primary-500/10">AG Veri Maskeleme</span>
+            <span class="px-4 py-1 rounded-full border border-primary-500/40">v1.0.0</span>
+            <span class="px-4 py-1 rounded-full border border-dark-700 text-dark-200">SwiftUI · macOS 13+</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold text-dark-50 leading-tight">
+            KVKK uyumlu verilerinizi saniyeler içinde maskeleyin.
+          </h1>
+          <p class="text-lg text-dark-300 max-w-2xl">
+            AG Veri Maskeleme; mask, hash, random ve redact stratejilerini canlı önizleme ile birleştiren, tamamen SwiftUI ile yazılmış ultra hafif bir macOS uygulamasıdır.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://github.com/ATAGRSL/github-site/releases/download/v1.0.0/ag-veri-maskeleme.dmg"
+              class="btn-primary"
+              download
+            >
+              v1.0.0 DMG'yi İndir
+            </a>
+            <a href="#masking-app" class="btn-secondary">Canlı önizlemeyi gör</a>
+            <a href="/#projects" class="glass-card px-4 py-3 rounded-2xl text-sm border border-dark-700 text-dark-200">
+              Portfolyoya dön
+            </a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4 text-sm">
+            <div class="glass-card p-5 border border-dark-800/60 rounded-2xl">
+              <p class="text-dark-200 font-semibold mb-1">Native SwiftUI</p>
+              <p class="text-dark-400">Apple Silicon için optimize, 620&nbsp;KB</p>
+            </div>
+            <div class="glass-card p-5 border border-dark-800/60 rounded-2xl">
+              <p class="text-dark-200 font-semibold mb-1">Offline-First</p>
+              <p class="text-dark-400">İnternet gerektirmez, KVKK/GDPR uyumlu</p>
+            </div>
+            <div class="glass-card p-5 border border-dark-800/60 rounded-2xl">
+              <p class="text-dark-200 font-semibold mb-1">Canlı Önizleme</p>
+              <p class="text-dark-400">Demo veri ve custom CSV/JSON desteği</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card border border-primary-500/20 rounded-3xl p-8 space-y-6 bg-dark-950/40">
+          <div class="flex items-center justify-between">
+            <p class="text-xs uppercase tracking-[0.4em] text-primary-200">Release Notları</p>
+            <span class="text-xs font-mono text-dark-400">Build 2025.11</span>
+          </div>
+          <h2 class="text-2xl font-semibold text-dark-50 leading-snug">Profesyonel Veri Maskeleme Toolkit</h2>
+          <p class="text-dark-300 text-sm leading-relaxed">
+            Hassas alanları tek tıkla maskeleyin, tuz değerlerini yönetin ve çıktıları CSV/JSON olarak dışa aktarın. Blur/pulse animasyonlu modern SwiftUI
+            arayüzüyle süreçleri gözlemleyin.
+          </p>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="glass-card bg-dark-900/50 p-4 rounded-2xl border border-dark-800/80">
+              <p class="text-dark-400 text-xs uppercase mb-1">Uyumluluk</p>
+              <p class="text-dark-100 font-semibold">KVKK · GDPR</p>
+            </div>
+            <div class="glass-card bg-dark-900/50 p-4 rounded-2xl border border-dark-800/80">
+              <p class="text-dark-400 text-xs uppercase mb-1">Donanım</p>
+              <p class="text-dark-100 font-semibold">Apple Silicon</p>
+            </div>
+          </div>
+          <ul class="text-sm text-dark-300 space-y-2 list-disc list-inside">
+            <li>Mask · Hash · Randomize · Redact stratejileri</li>
+            <li>Demo dataset + canlı preview + rollback</li>
+            <li>CSV/JSON import-export ve profile kaydetme</li>
+            <li>Hata yakalama ve loglama için sandbox izolasyonu</li>
+          </ul>
+          <div class="grid grid-cols-2 gap-4 text-xs uppercase tracking-wide text-dark-500">
+            <div>
+              <p class="text-dark-400 mb-1">Paket Boyutu</p>
+              <p class="text-dark-100 font-semibold">620 KB</p>
+            </div>
+            <div>
+              <p class="text-dark-400 mb-1">Çıkış Tarihi</p>
+              <p class="text-dark-100 font-semibold">Kasım 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-dark-950/60 border-y border-dark-900/40">
+      <div class="container-custom space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <p class="text-primary-300 font-semibold uppercase tracking-[0.35em]">İndirme · Kurulum · Destek</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-dark-50 leading-snug">Birkaç dakikada kur, demo veri ile doğrula, maskeleme akışını çalıştır.</h2>
+          <p class="text-dark-400">
+            DMG'yi indirip Applications klasörüne sürüklemeniz yeterli. Aşağıdaki adımlar hash doğrulama, kurulum ve destek süreçlerinde kaybolmamanız için rehberlik eder.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="glass-card p-6 rounded-3xl border border-primary-500/30 space-y-4">
+            <div class="flex items-center justify-between text-xs font-semibold text-primary-200 uppercase">
+              <span>Adım 01</span>
+              <span>İndirme</span>
+            </div>
+            <h3 class="text-xl font-semibold text-dark-50">DMG'yi güvenle indir</h3>
+            <p class="text-sm text-dark-300">
+              GitHub Release imzalı DMG; Apple Silicon için optimize, yalnızca 620&nbsp;KB. SHA-256 hash'i kontrol ederek güvence altına alın.
+            </p>
+            <div class="flex flex-col gap-3">
+              <a
+                href="https://github.com/ATAGRSL/github-site/releases/download/v1.0.0/ag-veri-maskeleme.dmg"
+                class="btn-primary w-full justify-center"
+                download
+              >
+                v1.0.0 DMG'yi İndir
+              </a>
+              <div class="glass-card p-3 rounded-2xl border border-primary-500/20 bg-dark-950/60">
+                <p class="text-[11px] uppercase tracking-wide text-dark-500 mb-1">Hash Komutu</p>
+                <code class="text-xs text-primary-200 font-mono break-all">shasum -a 256 ag-veri-maskeleme.dmg</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-3xl border border-dark-800/60 space-y-4">
+            <div class="flex items-center justify-between text-xs font-semibold text-dark-400 uppercase">
+              <span>Adım 02</span>
+              <span>Kurulum</span>
+            </div>
+            <h3 class="text-xl font-semibold text-dark-50">Sürükle-bırak ile kur</h3>
+            <ul class="text-sm text-dark-300 space-y-2 list-disc list-inside">
+              <li>DMG'yi aç, `AGVeriMaskeleme.app` dosyasını `Applications` klasörüne sürükle.</li>
+              <li>Gatekeeper uyarısı görürseniz `System Settings → Privacy & Security` üzerinden “Open Anyway” seçin.</li>
+              <li>Demo CSV ile önizleme al ya da kendi CSV/JSON dosyanı yükle.</li>
+            </ul>
+            <div class="pt-2">
+              <a
+                href="/docs/ag-veri-maskeleme.md"
+                class="btn-secondary w-full justify-center block"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Detaylı Kurulum Rehberi
+              </a>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-3xl border border-dark-800/60 space-y-4">
+            <div class="flex items-center justify-between text-xs font-semibold text-dark-400 uppercase">
+              <span>Adım 03</span>
+              <span>Destek</span>
+            </div>
+            <h3 class="text-xl font-semibold text-dark-50">Feedback & destek kanalları</h3>
+            <p class="text-sm text-dark-300">
+              Hata raporları, yeni strateji talepleri veya entegrasyon sorularınız için doğrudan iletişime geçebilirsiniz.
+            </p>
+            <div class="flex flex-col gap-3">
+              <a href="mailto:atagursel@yahoo.com" class="glass-card px-4 py-2 rounded-2xl text-sm border border-primary-500/30 text-primary-100">
+                E-posta gönder
+              </a>
+              <a
+                href="https://www.linkedin.com/in/atagursel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="glass-card px-4 py-2 rounded-2xl text-sm border border-dark-700 text-dark-100"
+              >
+                LinkedIn üzerinden mesaj
+              </a>
+              <p class="text-xs text-dark-500">
+                Ortalama geri dönüş: <span class="text-primary-200 font-semibold">24 saat</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 md:p-8 rounded-[28px] border border-dark-800/70 grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-wide text-primary-300">
+              <span>Hızlı Başlangıç</span>
+              <span class="w-1 h-1 rounded-full bg-primary-400"></span>
+              <span>Demo + Prod</span>
+            </div>
+            <h3 class="text-2xl font-semibold text-dark-50">İlk testinizi 90 saniyede tamamlayın</h3>
+            <ol class="space-y-3 text-dark-300 text-sm">
+              <li><strong class="text-primary-300">1.</strong> DMG'yi indir, hash doğrula, uygulamayı Applications'a taşı.</li>
+              <li><strong class="text-primary-300">2.</strong> Uygulamayı aç, `Demo CSV` veya kendi CSV/JSON dosyanızı seç.</li>
+              <li><strong class="text-primary-300">3.</strong> Masking stratejisini seç, canlı önizlemeyi kontrol et, export al.</li>
+            </ol>
+            <div class="grid grid-cols-2 gap-4 text-sm text-dark-300">
+              <div class="glass-card p-3 rounded-2xl border border-dark-800/70">
+                <p class="text-xs uppercase tracking-wide text-dark-500 mb-1">Minimum Gereksinim</p>
+                <p class="text-dark-100 font-semibold">macOS 13 · Apple Silicon</p>
+              </div>
+              <div class="glass-card p-3 rounded-2xl border border-dark-800/70">
+                <p class="text-xs uppercase tracking-wide text-dark-500 mb-1">Profil Saklama</p>
+                <p class="text-dark-100 font-semibold">~/Library/Application Support/AGVM</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="glass-card bg-dark-950/60 p-4 rounded-2xl border border-dark-800/80">
+              <p class="text-xs font-mono text-primary-300 uppercase mb-2">Örnek profil</p>
+              <pre class="text-sm text-dark-100">{`{
+  "columns": ["tc_kimlik", "iban", "adres"],
+  "strategy": "mask",
+  "format": "csv",
+  "salt": "kvkk-demo"
+}`}</pre>
+            </div>
+            <div class="glass-card bg-dark-950/60 p-4 rounded-2xl border border-dark-800/80">
+              <p class="text-xs font-mono text-primary-300 uppercase mb-2">CLI Export</p>
+              <pre class="text-sm text-dark-100">~/Downloads/masked-customers.csv</pre>
+            </div>
+            <div class="flex flex-wrap gap-3 text-sm text-dark-300">
+              <span class="px-3 py-2 rounded-full border border-primary-500/40 bg-primary-500/10">
+                v1.0.0 · Native SwiftUI
+              </span>
+              <span class="px-3 py-2 rounded-full border border-dark-700">
+                KVKK/GDPR Uyumlu
+              </span>
+              <span class="px-3 py-2 rounded-full border border-dark-700">
+                Offline-first · 620 KB
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <DataMaskingApp client:visible />
+  <Footer client:visible />
+</Layout>
