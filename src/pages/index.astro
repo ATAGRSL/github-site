@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ScrollProgress from '../components/ScrollProgress';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Skills from '../components/Skills';
+import Experience from '../components/Experience';
+import Education from '../components/Education';
+import Certifications from '../components/Certifications';
+import Projects from '../components/Projects';
+import { fetchShowcaseProjects } from '../utils/projects';
+import Footer from '../components/Footer';
+const projects = await fetchShowcaseProjects();
+---
+
+<Layout title="Ata Gürsel · Full Stack Developer & AI Builder">
+  <ScrollProgress client:load />
+  <Navbar client:load />
+  <Hero client:load />
+  <About client:visible />
+  <Skills client:visible />
+  <Experience client:visible />
+  <Education client:visible />
+  <Certifications client:visible />
+  <Projects client:visible projects={projects} />
+  <Footer client:visible />
+</Layout>
